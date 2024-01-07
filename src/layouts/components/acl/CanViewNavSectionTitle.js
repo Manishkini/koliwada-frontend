@@ -6,7 +6,11 @@ const CanViewNavSectionTitle = props => {
 
   // ** Hook
   const auth = useAuth()
-  if (auth.user || (navTitle && navTitle.auth === false)) {
+  if (auth.user && navTitle?.auth) {
+    // if user is logged-in show them products, villages, village level gallery dropdown etc
+    return <>{children}</>
+  } else if (navTitle && !navTitle.auth) {
+    // if user is not logged-in show them basic dropdowns
     return <>{children}</>
   } else {
     return null
