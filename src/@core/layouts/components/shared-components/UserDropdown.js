@@ -19,14 +19,14 @@ import Icon from 'src/@core/components/icon'
 
 // ** Context
 import { useAuth } from 'src/hooks/useAuth'
-import LoginV1 from 'src/layouts/components/dialog-box/login'
+import LoginV1 from 'src/layouts/components/Login/index'
 
 // ** Styled Components
-const BadgeContentSpan = styled('span')(({ theme }) => ({
-  width: 8,
-  height: 8,
+const BadgeContentSpan = styled(Icon)(({ theme }) => ({
+  width: 15,
+  height: 15,
   borderRadius: '50%',
-  backgroundColor: theme.palette.success.main,
+  backgroundColor: theme.palette.primary.main,
   boxShadow: `0 0 0 2px ${theme.palette.background.paper}`
 }))
 
@@ -89,9 +89,9 @@ const UserDropdown = props => {
           overlap='circular'
           onClick={handleDropdownOpen}
           sx={{ ml: 2, cursor: 'pointer' }}
-          badgeContent={<BadgeContentSpan />}
+          badgeContent={user?.isApproved && <BadgeContentSpan icon={'typcn:tick'} />}
           anchorOrigin={{
-            vertical: 'bottom',
+            vertical: 'top',
             horizontal: 'right'
           }}
         >
@@ -207,7 +207,7 @@ const UserDropdown = props => {
         >
           <Box sx={styles}>
             <Icon icon='fluent-mdl2:signin' />
-            Sign In
+            Log In / Register
           </Box>
         </MenuItemStyled>
       </Menu>

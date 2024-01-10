@@ -11,9 +11,16 @@ const navigation = () => {
       icon: 'tabler:mail'
     },
     {
-      path: '/acl',
-      title: 'Access Control',
-      icon: 'tabler:shield'
+      title: 'Villages',
+      path: '/villages',
+      icon: 'tabler:settings',
+      children: [
+        {
+          title: 'Charkop',
+          path: '/villages/charkop',
+          icon: 'tabler:user-star'
+        }
+      ]
     }
   ]
 }

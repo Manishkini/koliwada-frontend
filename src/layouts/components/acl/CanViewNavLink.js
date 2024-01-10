@@ -3,7 +3,6 @@ import { useAuth } from 'src/hooks/useAuth'
 const CanViewNavLink = props => {
   // ** Props
   const { children, navLink } = props
-  console.log(navLink)
 
   // ** Hook
   const auth = useAuth()
